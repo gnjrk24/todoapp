@@ -42,11 +42,26 @@ import List from './List'
 
 
 const App = () => {
+  const todos = [
+    {
+        content: '課題をする'
+    },
+    {
+        content: '洗濯をする'
+    },
+    {
+        content: '電話をする'
+    },
+    {
+        content: '料理する'
+    }
+  ]
+
   return (
       <React.Fragment>
-          <h1>Todo App<h1/>
+          <h1>Todo App</h1>
           <Form />
-          <List />
+          <List todos={todos}/>
       </React.Fragment>
   )
 }
