@@ -1,7 +1,11 @@
 import React,{useState} from 'react'
 
-const Item = ({ content }) => {
+const Item = ({ content, deleteTodo,id }) => {
     const [isDone, setIsDone] = useState(false)
+    const deletebutton = () => {
+        deleteTodo(id)
+    }
+
     return (
         <li>
             <input type='checkbox'
@@ -12,6 +16,7 @@ const Item = ({ content }) => {
                 {textDecoration: isDone ? 'line-through' : 'none'}
             }>
                 {content}!</span>
+                <button onClick={deletebutton}>delete</button>
         </li>
     )
 }
